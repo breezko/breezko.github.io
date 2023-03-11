@@ -1,4 +1,11 @@
 
+function getPercentage(number) {
+    const percentages = [0.188982, 0.377965, 0.283474, 0.94491, 0.47246, 0.05197, 0.00189, 0.000756];
+    if (number < 1 || number > 8) {
+      return null; // return null if input is out of range
+    }
+    return percentages[number - 1]; // adjust index by subtracting 1 from input
+  }
 
 function toScientific(num) {
     const suffixes = ['', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
@@ -16,15 +23,16 @@ function doCalc() {
     const gemsCost = 30 - parseInt(document.getElementById("traitNum").value, 10) * 5;
     const synergyProb = parseInt(document.getElementById("synergyNum").value,10);
     const traitNum = parseInt(document.getElementById("traitNum").value, 10);
+    const gradePercentage = getPercentage(parseInt(document.getElementById("grade").value, 10));
     // probability of getting an SS Tier Grade
-    const ss_prob = 0.000756 * traitNum;
+    const gradeProb = gradePercentage * traitNum;
 
     // probability of getting the desired trait
     const trait_prob = 1 / 9;
 
     // probability of getting one of the desired synergies
     const synergy_prob = synergyProb / 4;
-    const ss_trait_synergy_prob = ss_prob * trait_prob * synergy_prob;
+    const ss_trait_synergy_prob = gradeProb * trait_prob * synergy_prob;
 
 
     // list to store the number of gems needed for each desired outcome
