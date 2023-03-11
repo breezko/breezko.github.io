@@ -90,7 +90,7 @@ const card = document.getElementById("probability-card");
 
 
 const cardHTML = `
-    <div class="card">
+    <div class="card" title="Probability/Chance of getting the desired Effect" data-toggle="tooltip" data-placement="top">
         <div class="card-body">
             <h5 class="card-title">Percentiles</h5>
             <p class="card-text">75%: ${toScientific(gems75)}</p>
