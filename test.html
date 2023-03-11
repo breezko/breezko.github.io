@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>My Highcharts Chart</title>
+  <!-- Load Highcharts from CDN -->
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+
+</head>
+<body>
+    <h1>Frequency Histogram of Gems Needed</h1>
+    <label for="trialsInput">Number of Trials:</label>
+    <script src="histo.js"></script>
+
+    <input id="trialsInput" value="10">
+    <button onclick="doCalc()">Calculate</button>
+    <!-- Add a div element to hold the chart -->
+    <div id="graph" style="display:none">
+    <div id="histogram"></div>
+    </div>
+    <!-- Load the JavaScript code that generates the histogram -->
+</body>
+</html>
