@@ -108,11 +108,11 @@ card.innerHTML = cardHTML;
             type: 'column'
         },
         title: {
-            text: 'Frequency Histogram of Gems Needed'
+            text: 'Frequency Histogram'
         },
         xAxis: {
             title: {
-                text: 'Gems Needed (Thousands)'
+                text: 'Trait Points Needed (Thousands)'
             },
             tickInterval: 100,
             labels: {
@@ -137,7 +137,7 @@ card.innerHTML = cardHTML;
                 const gemsInRange = gemsInBins[Math.floor(gems / 100)];
                 const frequency = gemsInRange.length;
                 gemsInRange.sort(function(a, b){return a-b});
-                return `<br>Actual gems needed: ${gemsInRange.map(gems => gems + "A").join(", ")}`;
+                return `<br>Actual Trait Points needed: ${gemsInRange.map(gems => gems + "A").join(", ")}`;
             }
         },
         plotOptions: {
