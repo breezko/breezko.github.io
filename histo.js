@@ -20,7 +20,7 @@ function toScientific(num) {
 function doCalc() {
     // number of trials
     const trials = parseInt(document.getElementById("trialsInput").value, 10);
-    const gemsCost = 30 - parseInt(document.getElementById("traitNum").value, 10) * 5;
+    const gemsCost = 5 + (parseInt(document.getElementById("traitNum").value, 10) * 5);
     const synergyProb = parseInt(document.getElementById("synergyNum").value,10);
     const traitNum = parseInt(document.getElementById("traitNum").value, 10);
     const gradePercentage = getPercentage(parseInt(document.getElementById("grade").value, 10));
@@ -31,7 +31,7 @@ function doCalc() {
     const trait_prob = 1 / 9;
 
     // probability of getting one of the desired synergies
-    const synergy_prob = synergyProb / 4;
+    const synergy_prob = synergyProb / 5;
     const ss_trait_synergy_prob = gradeProb * trait_prob * synergy_prob;
 
 
