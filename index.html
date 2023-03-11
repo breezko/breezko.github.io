@@ -1,118 +1,121 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <meta charset="UTF-8">
-        <title>My Highcharts Chart</title>
-        <!-- Load Highcharts from CDN -->
-        <script src="https://code.highcharts.com/highcharts.js"></script>
-        <script src="histo.js"></script>
-        <link rel="stylesheet" href="https://cdnjs.buymeacoffee.com/1.0.0/button.min.css" />
-    
-        <style>
-            #footer {
-                background-color: #f8f8f8;
-                padding: 20px;
-                text-align: center;
-                font-size: 14px;
-                margin-top: auto;
-                position: fixed;
-                bottom: 0;
-                left: 0;
-                right: 0;
-            }
-            
-            #histogram {
-                min-width: 310px;
-                max-width: 100%;
-                height: 400px;
-                margin: 0 auto;
-            }
-            
-            body {
-                font-family: 'Roboto', sans-serif;
-                background-color: #F0F0F0;
-                margin: 0;
-                padding: 0;
-                display: flex;
-                flex-direction: column;
-                min-height: 100vh;
-            }
-            
-            h1 {
-                text-align: center;
-                margin-top: 50px;
-                margin-bottom: 30px;
-                font-size: 2rem;
-                font-weight: 500;
-                color: #333;
-            }
-            
-            label {
-                display: block;
-                margin-bottom: 10px;
-                font-size: 1rem;
-                color: #333;
-            }
-            
-            input[type="number"],
-            button {
-                font-size: 1rem;
-                padding: 10px 20px;
-                border: 1px solid #CCC;
-                border-radius: 4px;
-                background-color: #FFF;
-                color: #333;
-                margin-right: 10px;
-                outline: none;
-                transition: all 0.3s ease;
-                font-family: inherit;
-                font-weight: 500;
-            }
-            
-            button {
-                background-color: #4CAF50;
-                color: #FFF;
-                cursor: pointer;
-            }
-            
-            button:hover {
-                background-color: #3E8E41;
-            }
-            
-            button:active {
-                transform: translateY(1px);
-                background-color: #347D39;
-            }
-            
-            ::placeholder {
-                color: #999;
-            }
-        </style>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <title>Legend of Slime - Probability Calculator</title>
+    <!-- Load Highcharts from CDN -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="histo.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
+    <style>
+        #footer {
+            background-color: #f8f8f8;
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+            margin-top: auto;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        #histogram {
+            min-width: 310px;
+            max-width: 100%;
+            height: 400px;
+            margin: 0 auto;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #F0F0F0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            font-weight: 500;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        input[type="number"],
+        button {
+            font-size: 1rem;
+            padding: 10px 20px;
+            border: 1px solid #CCC;
+            border-radius: 4px;
+            background-color: #FFF;
+            color: #333;
+            margin-right: 10px;
+            outline: none;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            font-weight: 500;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: #FFF;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #3E8E41;
+        }
+
+        button:active {
+            transform: translateY(1px);
+            background-color: #347D39;
+        }
+
+        ::placeholder {
+            color: #999;
+        }
+    </style>
+</head 
 <body>
-    <h1>Frequency Histogram of Gems Needed</h1>
-    <div style="text-align: center;">
-        <label for="trialsInput">Number of Trials:</label>
-        <input id="trialsInput" type="number" value="10">
+<h1>Experimental Probability</h1>
+<div style="text-align: center;">
+    <label for="trialsInput">Number of Trials:</label>
+    <input id="trialsInput" type="number" value="10">
 
-        <button onclick="doCalc()">Calculate</button>
-    </div>
+    <label for="gemsInput">Gems Cost</label>
+    <input id="gemsInput" type="number" value="10">
+    <button onclick="doCalc()">Calculate</button>
+</div>
 
-    <!-- Add a div element to hold the chart -->
-    <div id="graph" style="display: none;">
-        <div id="histogram"></div>
-    </div>
- <!-- Add the BuyMeACoffee button -->
- <div id="footer">
+<!-- Add a div element to hold the chart -->
+<div id="graph" style="display: none;">
+    <div id="histogram"></div>
+</div>
+<!-- Add the BuyMeACoffee button -->
+<div id="footer">
     <a href="https://www.buymeacoffee.com/breezko" target="_blank" rel="noopener">
-        <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;">
+        <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee"
+            style="height: 60px !important;width: 217px !important;">
     </a>
 </div>
- </div>
- 
-    <!-- Load the JavaScript code that generates the histogram -->
+</div>
+
+<!-- Load the JavaScript code that generates the histogram -->
 </body>
 
 </html>
